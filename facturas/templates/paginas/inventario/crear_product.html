@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block titulo %} Crear un Producto{% endblock %}
+{% block contenido %}
+{% csrf_token %}
+<section class="crearproducto-container">
+    <div>
+    <h2 class="m">C</h2><h2 class="r">r</h2><h2 class="m">e</h2><h2 class="r">a</h2><h2 class="m">r</h2><h2></h2><h2 class="r">P</h2><h2 class="m">r</h2><h2 class="r">o</h2><h2 class="m">d</h2><h2 class="r">u</h2><h2 class="m">c</h2><h2 class="r">t</h2><h2 class="m">o</h2>
+</div>
+<form action="" method="post" class="crearproducto">
+    {% for campo in formulario %}
+    <label for="">{{ campo.name }}</label>
+    {{ campo }}
+    {% endfor %}
+    <input type="submit" class="send" value="Agregar Producto">
+</form>
+{% endblock %}
+</section>

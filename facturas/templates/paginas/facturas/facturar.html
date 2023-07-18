@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block titulo %} Crear un Producto{% endblock %}
+{% block contenido %}
+{% csrf_token %}
+    
+    {% for i in head %}
+    <label for="">{{ i.name }}</label>
+    {{ i }}
+    {% endfor %}
+
+    <h1>aa</h1>
+
+    {% for i in factura %}
+    <label for="">{{ i.name }}</label>
+    {{ i }}
+    {% endfor %}
+
+    {% for i in factura %}
+    <label for="">{{ i.name }}</label>
+    {{ i }}
+    {% endfor %}
+{% endblock %}

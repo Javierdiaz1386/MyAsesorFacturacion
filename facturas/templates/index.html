@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} Inicio{% endblock %}</title>
+    <link rel="stylesheet" href='{% static "CSS/inicio/style.css" %}'>
+</head>
+<body>
+    <header class="nav-container">
+        <nav class="nav-bar">
+            <ul class="nav-items">
+                <li><a href="/">Inico</a></li>
+                <li><a href="/facturas/crear_cliente">Clientes</a></li>
+                <li><a href="/facturas/facturar">Facturas</a></li>
+                <li><a href="/facturas/inventario/crear_producto">Inventario</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block contenido %} {% endblock %}
+</body>
+</html>

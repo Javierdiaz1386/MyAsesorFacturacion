@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block titulo %} Crear un Cliente{% endblock %}
+{% block contenido %}
+<section class="clientes-container">
+    <div>
+    <h2 class="m">C</h2><h2 class="r">r</h2><h2 class="m">e</h2><h2 class="r">a</h2><h2 class="m">r</h2><h2> </h2><h2 class="r">C</h2><h2 class="m">l</h2><h2 class="r">i</h2><h2 class="m">e</h2><h2 class="r">n</h2><h2 class="m">t</h2><h2 class="r">e</h2>
+</div>
+    <form action="" method="post" class="clientes">
+    {% for campo in formulario %}
+    <label for="">{{ campo.name }}</label>
+    {{ campo }}
+    {% endfor %}
+    <input type="submit" class="send" value="Agregar Cliente">
+</form>
+</section>
+
+{% endblock %}
