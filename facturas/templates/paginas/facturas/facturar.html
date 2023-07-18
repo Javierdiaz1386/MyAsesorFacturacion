@@ -2,23 +2,35 @@
 {% block titulo %} Crear un Producto{% endblock %}
 {% block contenido %}
 {% csrf_token %}
-    <form action="" method="post">
+<section class="facturar-container">
+    <form action="" method="post" class="facturar">
     {% for i in head %}
     <label for="">{{ i.name }}</label>
     {{ i }}
     {% endfor %}
+    <input type="submit" class="send">
+    </form>
+    
+    <form action="" class="facturar2" id="facturar2" method="post">
+        <button id="add">+</button>
+    <input type="submit" class="send">
 
-    <h1>aa</h1>
-
+        <div id="producto">
+    {% for i in factura %}
+   
+    <label for="">{{ i.name }}</label>
+    {{ i }}
+    {% endfor %}
+    <button id="delete" class="delete">x</button>
+</div>
+<div>
     {% for i in factura %}
     <label for="">{{ i.name }}</label>
     {{ i }}
     {% endfor %}
-
-    {% for i in factura %}
-    <label for="">{{ i.name }}</label>
-    {{ i }}
-    {% endfor %}
-    <input type="submit">
+    <button id="delete" class="delete">x</button>
+</div>
+    
 </form>
+</section>
 {% endblock %}

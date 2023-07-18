@@ -31,7 +31,23 @@ def facturar(request):
     clientes = Cliente.objects.all()
     facturaHEAD = FacturaHead(request.POST)
     factura = FacturaDetail(request.POST)
-    print(request.POST)
+    
+    if(request.method == 'POST' and len(request.POST)<3):
+        facturaHEAD = FacturaHead(request.POST)
+        facturaHEAD.save()
+    elif(request.method == 'POST'):
+            cantidades = request.POST.getlist('cantidad')
+            factura_ids = request.POST.getlist('facturaID')
+            producto_ids = request.POST.getlist('ProductoID')
+            print(producto_ids, request.POST)
+            for p in range(0, len(cantidades)):
+                factura = FacturaDetail({
+                    "cantidad" : cantidades[p],
+                    "facturaID" : factura_ids[p],
+                    "ProductoID" : producto_ids[p],
+                })
+                factura.save()
+
     return render(request, 'paginas/facturas/facturar.html', {"clientes": clientes,
                                                               "factura": factura,
                                                               "head": facturaHEAD

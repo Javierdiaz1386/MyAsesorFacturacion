@@ -11,11 +11,11 @@ class Cliente(models.Model):
 
 
 class Factura(models.Model):
-    fecha = models.DateField(blank=False)
+    fecha = models.DateField(blank=False, auto_now_add=True)
     clienteID = models.ForeignKey(Cliente, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.clienteID.nombre
+        return f'{self.clienteID.nombre}-{self.fecha}-{self.id}'
 
 
 
