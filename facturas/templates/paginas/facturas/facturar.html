@@ -2,7 +2,7 @@
 {% block titulo %} Crear un Producto{% endblock %}
 {% block contenido %}
 {% csrf_token %}
-    
+    <form action="" method="post">
     {% for i in head %}
     <label for="">{{ i.name }}</label>
     {{ i }}
@@ -19,4 +19,6 @@
     <label for="">{{ i.name }}</label>
     {{ i }}
     {% endfor %}
+    <input type="submit">
+</form>
 {% endblock %}

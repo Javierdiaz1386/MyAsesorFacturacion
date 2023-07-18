@@ -26,10 +26,12 @@ def crear_producto(request):
             producto_a_crear.save()
     return render(request, 'paginas/inventario/crear_product.html', {"formulario":producto_a_crear})
 
+@csrf_exempt
 def facturar(request):
     clientes = Cliente.objects.all()
     facturaHEAD = FacturaHead(request.POST)
     factura = FacturaDetail(request.POST)
+    print(request.POST)
     return render(request, 'paginas/facturas/facturar.html', {"clientes": clientes,
                                                               "factura": factura,
                                                               "head": facturaHEAD

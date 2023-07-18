@@ -15,7 +15,7 @@ class Factura(models.Model):
     clienteID = models.ForeignKey(Cliente, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.clienteID
+        return self.clienteID.nombre
 
 
 
